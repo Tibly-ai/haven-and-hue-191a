@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Haven & Hue Home Staging transforms houses into homes buyers fall in love with. Full-service home staging and interior design — thoughtful, calm, and beautifully done.">
+<title>Haven & Hue Home Staging — Spaces That Feel Like Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf6f0;
+    --linen:#f2ebe1;
+    --sand:#e5dacb;
+    --sage:#8a9a8b;
+    --sage-deep:#5f7161;
+    --clay:#c08a6d;
+    --clay-deep:#a9714f;
+    --ink:#3d3a34;
+    --ink-soft:#6e685e;
+    --white:#fffdfa;
+    --shadow:0 18px 45px rgba(61,58,52,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    font-size:17px;
+  }
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.2;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-block;
+    font-size:.78rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--sage-deep);
+    margin-bottom:14px;
+    font-weight:400;
+  }
+  .btn{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-size:.85rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    font-weight:400;
+    text-decoration:none;
+    padding:16px 36px;
+    border-radius:2px;
+    transition:background .25s ease,color .25s ease,transform .25s ease;
+  }
+  .btn-primary{background:var(--sage-deep);color:var(--white);}
+  .btn-primary:hover{background:var(--ink);transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--white);transform:translateY(-2px);}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,246,240,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--sand);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 24px;max-width:1120px;margin:0 auto;
+  }
+  .brand{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.55rem;
+    letter-spacing:.04em;
+    text-decoration:none;
+    color:var(--ink);
+    line-height:1;
+  }
+  .brand em{font-style:normal;color:var(--clay-deep);}
+  .brand small{
+    display:block;font-family:'Jost',sans-serif;
+    font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--ink-soft);margin-top:4px;
+  }
+  nav.main ul{display:flex;gap:34px;list-style:none;}
+  nav.main a{
+    text-decoration:none;font-size:.85rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-soft);
+    padding-bottom:5px;border-bottom:1px solid transparent;
+    transition:color .2s,border-color .2s;
+  }
+  nav.main a:hover,nav.main a[aria-current]{color:var(--ink);border-color:var(--clay);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse at 78% 20%, rgba(192,138,109,.20), transparent 55%),
+      radial-gradient(ellipse at 12% 85%, rgba(138,154,139,.22), transparent 50%),
+      linear-gradient(160deg,var(--linen) 0%,var(--cream) 60%,var(--sand) 100%);
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;
+    align-items:center;padding-top:96px;padding-bottom:104px;
+  }
+  .hero h1{font-size:clamp(2.6rem,5vw,4rem);margin-bottom:22px;}
+  .hero h1 em{font-style:italic;color:var(--sage-deep);}
+  .hero p.lead{font-size:1.15rem;color:var(--ink-soft);max-width:32rem;margin-bottom:36px;}
+  .hero-actions{display:flex;gap:18px;flex-wrap:wrap;}
+  .hero-art{
+    position:relative;height:440px;
+  }
+  .hero-art .card{
+    position:absolute;border-radius:4px;box-shadow:var(--shadow);
+  }
+  .hero-art .card.a{
+    inset:0 60px 70px 0;
+    background:linear-gradient(150deg,#d9c9b4 0%,#c9b096 45%,#b09274 100%);
+  }
+  .hero-art .card.a::after{
+    content:"";position:absolute;inset:22px;border:1px solid rgba(255,253,250,.55);border-radius:2px;
+  }
+  .hero-art .card.b{
+    right:0;bottom:0;width:56%;height:52%;
+    background:linear-gradient(140deg,var(--sage) 0%,var(--sage-deep) 100%);
+    display:flex;align-items:flex-end;padding:22px;
+    color:var(--white);
+  }
+  .hero-art .card.b span{
+    font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;line-height:1.4;
+  }
+  .hero-stats{
+    display:flex;gap:44px;margin-top:44px;flex-wrap:wrap;
+  }
+  .hero-stats div strong{
+    display:block;font-family:'Cormorant Garamond',serif;
+    font-size:2rem;font-weight:600;color:var(--clay-deep);
+  }
+  .hero-stats div span{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0;}
+  .section-head{max-width:620px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft);}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* Services */
+  .services{background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .svc{
+    background:var(--cream);border:1px solid var(--sand);border-radius:4px;
+    padding:40px 32px;transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .svc .glyph{
+    width:52px;height:52px;border-radius:50%;
+    background:linear-gradient(140deg,var(--sage),var(--sage-deep));
+    color:var(--white);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;
+    margin-bottom:22px;
+  }
+  .svc:nth-child(2) .glyph{background:linear-gradient(140deg,var(--clay),var(--clay-deep));}
+  .svc:nth-child(3) .glyph{background:linear-gradient(140deg,#b8a88f,#8f7c60);}
+  .svc h3{font-size:1.45rem;margin-bottom:12px;}
+  .svc p{color:var(--ink-soft);font-size:.98rem;margin-bottom:18px;}
+  .svc a{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--sage-deep);}
+  .svc a:hover{color:var(--clay-deep);}
+
+  /* Portfolio */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .work{
+    position:relative;border-radius:4px;overflow:hidden;height:340px;
+    display:flex;align-items:flex-end;text-decoration:none;
+    box-shadow:var(--shadow);
+    transition:transform .3s ease;
+  }
+  .work:hover{transform:translateY(-6px);}
+  .work.p1{background:linear-gradient(160deg,#e8dccb 0%,#c9ab8b 55%,#9b7250 100%);}
+  .work.p2{background:linear-gradient(160deg,#dfe4dc 0%,#a7b6a7 55%,#5f7161 100%);}
+  .work.p3{background:linear-gradient(160deg,#efe6d8 0%,#d3b8a4 55%,#a9714f 100%);}
+  .work::before{
+    content:"";position:absolute;inset:18px;border:1px solid rgba(255,253,250,.5);
+    border-radius:2px;pointer-events:none;
+  }
+  .work-label{
+    position:relative;width:100%;padding:26px 26px 22px;
+    background:linear-gradient(to top,rgba(40,37,32,.72),transparent);
+    color:var(--white);
+  }
+  .work-label h3{font-size:1.35rem;margin-bottom:4px;}
+  .work-label span{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85;}
+  .work-cta{text-align:center;margin-top:52px;}
+
+  /* Process / About strip */
+  .about-strip{background:var(--sage-deep);color:var(--linen);}
+  .about-strip .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .about-strip .eyebrow{color:#cdd8ce;}
+  .about-strip h2{font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--white);margin-bottom:18px;}
+  .about-strip p{color:#dee6de;margin-bottom:16px;}
+  .about-strip .btn-ghost{border-color:var(--linen);color:var(--linen);}
+  .about-strip .btn-ghost:hover{background:var(--linen);color:var(--sage-deep);}
+  .steps{list-style:none;display:grid;gap:26px;counter-reset:step;}
+  .steps li{
+    display:flex;gap:20px;align-items:flex-start;
+    background:rgba(255,253,250,.06);border:1px solid rgba(255,253,250,.16);
+    border-radius:4px;padding:22px 24px;counter-increment:step;
+  }
+  .steps li::before{
+    content:counter(step,decimal-leading-zero);
+    font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;
+    color:var(--sand);line-height:1;flex-shrink:0;padding-top:2px;
+  }
+  .steps h3{font-size:1.2rem;color:var(--white);margin-bottom:4px;}
+  .steps p{font-size:.92rem;margin:0;color:#cfd9cf;}
+
+  /* Testimonials */
+  .quotes{background:var(--linen);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  blockquote{
+    background:var(--white);border:1px solid var(--sand);border-radius:4px;
+    padding:36px 30px;position:relative;
+  }
+  blockquote::before{
+    content:"\201C";font-family:'Cormorant Garamond',serif;
+    font-size:4rem;line-height:1;color:var(--clay);display:block;margin-bottom:6px;
+  }
+  blockquote p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;margin-bottom:20px;}
+  blockquote cite{
+    font-style:normal;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  blockquote cite strong{display:block;font-weight:500;color:var(--ink);letter-spacing:.1em;}
+
+  /* Contact */
+  .contact .inner{
+    background:linear-gradient(150deg,var(--white),var(--linen));
+    border:1px solid var(--sand);border-radius:6px;
+    padding:72px 56px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
+    box-shadow:var(--shadow);
+  }
+  .contact h2{font-size:clamp(1.9rem,3.2vw,2.5rem);margin-bottom:16px;}
+  .contact p{color:var(--ink-soft);margin-bottom:28px;max-width:30rem;}
+  .contact-details{list-style:none;display:grid;gap:20px;}
+  .contact-details li{
+    border-left:2px solid var(--clay);padding-left:20px;
+  }
+  .contact-details span{
+    display:block;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px;
+  }
+  .contact-details a{text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:1.25rem;}
+  .contact-details a:hover{color:var(--clay-deep);}
+  .contact-details p{margin:0;font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--ink);}
+
+  /* Footer */
+  footer.site{
+    background:var(--ink);color:#b8b2a6;padding:64px 0 32px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+  footer .brand{color:var(--cream);font-size:1.4rem;}
+  footer .brand small{color:#8f897d;}
+  footer p{font-size:.92rem;max-width:26rem;margin-top:16px;}
+  footer h3{font-size:1.15rem;color:var(--cream);margin-bottom:16px;}
+  footer ul{list-style:none;display:grid;gap:10px;}
+  footer ul a{text-decoration:none;font-size:.92rem;transition:color .2s;}
+  footer ul a:hover{color:var(--cream);}
+  .foot-bottom{
+    border-top:1px solid rgba(250,246,240,.14);padding-top:26px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-size:.8rem;letter-spacing:.08em;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:940px){
+    .hero .wrap{grid-template-columns:1fr;padding-top:64px;padding-bottom:72px;}
+    .hero-art{height:360px;max-width:520px;}
+    .svc-grid,.work-grid,.quote-grid{grid-template-columns:1fr 1fr;}
+    .about-strip .wrap,.contact .inner{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    .nav{flex-direction:column;gap:16px;}
+    nav.main ul{gap:18px;flex-wrap:wrap;justify-content:center;}
+    section{padding:64px 0;}
+    .svc-grid,.work-grid,.quote-grid,.foot-grid{grid-template-columns:1fr;}
+    .work{height:280px;}
+    .contact .inner{padding:44px 26px;}
+    .hero-stats{gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="/">Haven <em>&amp;</em> Hue<small>Home Staging</small></a>
+    <nav class="main" aria-label="Primary">
+      <ul>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/portfolio">Our Work</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Home Staging &amp; Interior Design</span>
+        <h1>Every house has a story. <em>We help buyers feel it.</em></h1>
+        <p class="lead">Haven &amp; Hue transforms empty rooms and lived-in spaces into calm, inviting homes that photograph beautifully — and sell faster, for more.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/contact">Request a Consultation</a>
+          <a class="btn btn-ghost" href="/portfolio">See Our Work</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>250+</strong><span>Homes Staged</span></div>
+          <div><strong>11 Days</strong><span>Avg. Time on Market</span></div>
+          <div><strong>7.4%</strong><span>Avg. Over Asking</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="card a"></div>
+        <div class="card b"><span>“Soft light, warm textures, room to breathe.”</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What We Do</span>
+        <h2>Thoughtful design, from first showing to forever home</h2>
+        <p>Whether you're listing a property or settling into one, we bring calm, cohesive design that makes every square foot count.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc">
+          <div class="glyph">01</div>
+          <h3>Vacant Home Staging</h3>
+          <p>Full furnishing and styling of empty listings using our curated inventory of furniture, art, and textiles — designed to help buyers picture their life in the space.</p>
+          <a href="/services">Explore Staging →</a>
+        </article>
+        <article class="svc">
+          <div class="glyph">02</div>
+          <h3>Occupied Staging</h3>
+          <p>Living in the home while you sell? We edit, rearrange, and layer in key pieces to highlight your home's best features without upending your daily life.</p>
+          <a href="/services">Explore Occupied →</a>
+        </article>
+        <article class="svc">
+          <div class="glyph">03</div>
+          <h3>Interior Design</h3>
+          <p>For homeowners staying put: room refreshes, color consultations, and full-home design that turns "someday" spaces into rooms you actually love living in.</p>
+          <a href="/services">Explore Design →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio preview -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Our Work</span>
+        <h2>Recent transformations</h2>
+        <p>A few favorites from the past season — from a sun-washed craftsman to a downtown loft that sold in a single weekend.</p>
+      </div>
+      <div class="work-grid">
+        <a class="work p1" href="/portfolio">
+          <div class="work-label">
+            <h3>The Maplewood Craftsman</h3>
+            <span>Vacant Staging · Sold in 6 days</span>
+          </div>
+        </a>
+        <a class="work p2" href="/portfolio">
+          <div class="work-label">
+            <h3>Willow Creek Farmhouse</h3>
+            <span>Occupied Staging · 12% over asking</span>
+          </div>
+        </a>
+        <a class="work p3" href="/portfolio">
+          <div class="work-label">
+            <h3>The Ninth Street Loft</h3>
+            <span>Vacant Staging · Sold in one weekend</span>
+          </div>
+        </a>
+      </div>
+      <div class="work-cta">
+        <a class="btn btn-ghost" href="/portfolio">View the Full Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Process -->
+  <section class="about-strip" id="about">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Our Approach</span>
+        <h2>Calm spaces don't happen by accident</h2>
+        <p>Haven &amp; Hue was founded on a simple belief: a well-staged home shouldn't feel staged. It should feel like an exhale — warm, unhurried, and quietly beautiful.</p>
+        <p>Led by principal designer Mara Ellison, our small team blends real-estate savvy with a designer's eye, so every choice serves both the buyer's heart and your bottom line.</p>
+        <a class="btn btn-ghost" href="/about">Meet the Team</a>
+      </div>
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>Walkthrough &amp; Vision</h3>
+            <p>We tour the property, study its light and layout, and identify what buyers need to feel.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Curate &amp; Style</h3>
+            <p>Furniture, art, and textures are selected from our inventory and installed in a single day.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>List &amp; Celebrate</h3>
+            <p>Your home hits the market photo-ready. We handle de-staging after the offer is signed.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="quotes">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Kind Words</span>
+        <h2>What clients are saying</h2>
+      </div>
+      <div class="quote-grid">
+        <blockquote>
+          <p>Our house sat for two months before Haven &amp; Hue stepped in. Ten days after their install, we had three offers over asking. I still can't quite believe it.</p>
+          <cite><strong>Daniel &amp; Priya R.</strong>Homeowners, Maplewood</cite>
+        </blockquote>
+        <blockquote>
+          <p>Mara has an uncanny ability to make a space feel serene without stripping away its personality. My listings photograph like magazine spreads now.</p>
+          <cite><strong>Corinne Vasquez</strong>Realtor, Bluestone Realty</cite>
+        </blockquote>
+        <blockquote>
+          <p>They redesigned our living room after we bought — same budget-friendly ease, same warmth. It's the first room we've ever had that feels finished.</p>
+          <cite><strong>Theo M.</strong>Interior Design Client</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="inner">
+        <div>
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Ready to see your home in a new light?</h2>
+          <p>Tell us about your property or project and we'll follow up within one business day with next steps and a complimentary consultation.</p>
+          <a class="btn btn-primary" href="/contact">Start the Conversation</a>
+        </div>
+        <ul class="contact-details">
+          <li>
+            <span>Phone</span>
+            <a href="tel:+15035550164">(503) 555-0164</a>
+          </li>
+          <li>
+            <span>Email</span>
+            <a href="mailto:hello@havenandhue.com">hello@havenandhue.com</a>
+          </li>
+          <li>
+            <span>Studio</span>
+            <p>412 Alder Row, Suite 2 · Portland, OR</p>
+          </li>
+          <li>
+            <span>Hours</span>
+            <p>Mon–Fri, 9am–5pm · Installs by appointment</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">Haven <em>&amp;</em> Hue<small>Home Staging</small></a>
+        <p>Home staging and interior design studio serving Portland and the surrounding valley. Calm, curated spaces that help homes sell — and feel like havens.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/portfolio">Our Work</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Reach Us</h3>
+        <ul>
+          <li><a href="tel:+15035550164">(503) 555-0164</a></li>
+          <li><a href="mailto:hello@havenandhue.com">hello@havenandhue.com</a></li>
+          <li><a href="/contact">Book a Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Haven &amp; Hue Home Staging. All rights reserved.</span>
+      <span>Designed with intention in Portland, Oregon.</span>
+    </div>
+  </div>
+</footer>
+
+  <script async src="https://api.tibly.ai/widget/v1.js"></script>
+</body>
+</html>
