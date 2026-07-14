@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore the Haven & Hue portfolio — before-and-after home staging and interior design transformations from Portland and the surrounding valley.">
+<title>Our Work — Haven &amp; Hue Home Staging Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf6f0;
+    --linen:#f2ebe1;
+    --sand:#e5dacb;
+    --sage:#8a9a8b;
+    --sage-deep:#5f7161;
+    --clay:#c08a6d;
+    --clay-deep:#a9714f;
+    --ink:#3d3a34;
+    --ink-soft:#6e685e;
+    --white:#fffdfa;
+    --shadow:0 18px 45px rgba(61,58,52,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    font-size:17px;
+  }
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.2;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-block;
+    font-size:.78rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--sage-deep);
+    margin-bottom:14px;
+    font-weight:400;
+  }
+  .btn{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-size:.85rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    font-weight:400;
+    text-decoration:none;
+    padding:16px 36px;
+    border-radius:2px;
+    transition:background .25s ease,color .25s ease,transform .25s ease;
+  }
+  .btn-primary{background:var(--sage-deep);color:var(--white);}
+  .btn-primary:hover{background:var(--ink);transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--white);transform:translateY(-2px);}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,246,240,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--sand);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 24px;max-width:1120px;margin:0 auto;
+  }
+  .brand{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.55rem;
+    letter-spacing:.04em;
+    text-decoration:none;
+    color:var(--ink);
+    line-height:1;
+  }
+  .brand em{font-style:normal;color:var(--clay-deep);}
+  .brand small{
+    display:block;font-family:'Jost',sans-serif;
+    font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--ink-soft);margin-top:4px;
+  }
+  nav.main ul{display:flex;gap:34px;list-style:none;}
+  nav.main a{
+    text-decoration:none;font-size:.85rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-soft);
+    padding-bottom:5px;border-bottom:1px solid transparent;
+    transition:color .2s,border-color .2s;
+  }
+  nav.main a:hover,nav.main a[aria-current]{color:var(--ink);border-color:var(--clay);}
+
+  /* ---------- Page hero ---------- */
+  .page-hero{
+    background:
+      radial-gradient(ellipse at 80% 15%, rgba(192,138,109,.18), transparent 55%),
+      radial-gradient(ellipse at 10% 90%, rgba(138,154,139,.22), transparent 50%),
+      linear-gradient(160deg,var(--linen) 0%,var(--cream) 60%,var(--sand) 100%);
+    border-bottom:1px solid var(--sand);
+  }
+  .page-hero .wrap{padding-top:88px;padding-bottom:80px;max-width:760px;text-align:center;}
+  .page-hero h1{font-size:clamp(2.4rem,4.6vw,3.6rem);margin-bottom:20px;}
+  .page-hero h1 em{font-style:italic;color:var(--sage-deep);}
+  .page-hero p{font-size:1.12rem;color:var(--ink-soft);}
+  .hero-legend{
+    display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-top:34px;
+    font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .hero-legend span{display:flex;align-items:center;gap:10px;}
+  .hero-legend i{
+    width:14px;height:14px;border-radius:50%;display:inline-block;
+  }
+  .hero-legend .dot-before{background:linear-gradient(140deg,#cfc6b8,#a89c8a);}
+  .hero-legend .dot-after{background:linear-gradient(140deg,var(--sage),var(--sage-deep));}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0;}
+  .section-head{max-width:620px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft);}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* ---------- Project case studies ---------- */
+  .projects{padding-top:80px;}
+  .project{
+    background:var(--white);border:1px solid var(--sand);border-radius:6px;
+    box-shadow:var(--shadow);overflow:hidden;
+    margin-bottom:64px;
+  }
+  .project:last-child{margin-bottom:0;}
+  .project-meta{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;
+    padding:44px 48px 30px;
+  }
+  .project-meta h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .project-meta .eyebrow{margin-bottom:8px;}
+  .project-tags{display:flex;gap:10px;flex-wrap:wrap;}
+  .tag{
+    font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    border:1px solid var(--sand);border-radius:2px;
+    background:var(--cream);color:var(--ink-soft);
+    padding:8px 14px;white-space:nowrap;
+  }
+  .tag.result{border-color:var(--clay);color:var(--clay-deep);background:#faf1ea;}
+
+  .ba-pair{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+  }
+  .ba-panel{
+    position:relative;height:340px;display:flex;align-items:flex-end;
+  }
+  .ba-panel::before{
+    content:"";position:absolute;inset:18px;border:1px solid rgba(255,253,250,.5);
+    border-radius:2px;pointer-events:none;
+  }
+  .ba-badge{
+    position:absolute;top:30px;left:30px;
+    font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;font-weight:400;
+    background:rgba(40,37,32,.55);color:var(--white);
+    padding:7px 16px;border-radius:2px;
+  }
+  .ba-caption{
+    position:relative;width:100%;padding:24px 30px 22px;
+    background:linear-gradient(to top,rgba(40,37,32,.7),transparent);
+    color:var(--white);
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;line-height:1.5;
+  }
+  /* Before palettes — flat, cool, unfinished */
+  .before-1{background:linear-gradient(155deg,#d8d2c6 0%,#bdb3a3 55%,#948a79 100%);}
+  .before-2{background:linear-gradient(155deg,#d5d2cb 0%,#b3aea3 55%,#8a8478 100%);}
+  .before-3{background:linear-gradient(155deg,#d9d5cd 0%,#b8b2a6 55%,#8f887a 100%);}
+  .before-4{background:linear-gradient(155deg,#d4cfc5 0%,#b0a898 55%,#867e6e 100%);}
+  /* After palettes — warm, layered, alive */
+  .after-1{background:linear-gradient(155deg,#efe3d2 0%,#cfa987 45%,#a9714f 100%);}
+  .after-2{background:linear-gradient(155deg,#e3e8e0 0%,#a7b6a7 45%,#5f7161 100%);}
+  .after-3{background:linear-gradient(155deg,#f0e6d6 0%,#d3b8a4 45%,#9b7250 100%);}
+  .after-4{background:linear-gradient(155deg,#e9e6da 0%,#b8a88f 45%,#6e7c68 100%);}
+
+  .project-story{
+    display:grid;grid-template-columns:1.2fr .8fr;gap:48px;
+    padding:38px 48px 46px;
+  }
+  .project-story p{color:var(--ink-soft);margin-bottom:14px;}
+  .project-story p:last-child{margin-bottom:0;}
+  .project-facts{
+    list-style:none;display:grid;gap:18px;align-content:start;
+    border-left:2px solid var(--clay);padding-left:24px;
+  }
+  .project-facts span{
+    display:block;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px;
+  }
+  .project-facts strong{
+    font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--ink);
+  }
+
+  /* ---------- Results strip ---------- */
+  .results-strip{background:var(--sage-deep);color:var(--linen);}
+  .results-strip .eyebrow{color:#cdd8ce;}
+  .results-strip h2{color:var(--white);}
+  .results-strip .section-head p{color:#dee6de;}
+  .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .result-card{
+    background:rgba(255,253,250,.06);border:1px solid rgba(255,253,250,.16);
+    border-radius:4px;padding:32px 26px;text-align:center;
+  }
+  .result-card strong{
+    display:block;font-family:'Cormorant Garamond',serif;
+    font-size:2.4rem;font-weight:600;color:var(--sand);line-height:1.15;margin-bottom:6px;
+  }
+  .result-card span{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#cfd9cf;}
+
+  /* ---------- Testimonial ---------- */
+  .quotes{background:var(--linen);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
+  blockquote{
+    background:var(--white);border:1px solid var(--sand);border-radius:4px;
+    padding:44px 46px;position:relative;max-width:760px;margin:0 auto;text-align:center;
+  }
+  blockquote::before{
+    content:"\201C";font-family:'Cormorant Garamond',serif;
+    font-size:4rem;line-height:1;color:var(--clay);display:block;margin-bottom:6px;
+  }
+  blockquote p{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;margin-bottom:20px;}
+  blockquote cite{
+    font-style:normal;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  blockquote cite strong{display:block;font-weight:500;color:var(--ink);letter-spacing:.1em;}
+
+  /* ---------- CTA ---------- */
+  .cta .inner{
+    background:linear-gradient(150deg,var(--white),var(--linen));
+    border:1px solid var(--sand);border-radius:6px;
+    padding:72px 56px;text-align:center;box-shadow:var(--shadow);
+  }
+  .cta h2{font-size:clamp(1.9rem,3.2vw,2.5rem);margin-bottom:16px;}
+  .cta p{color:var(--ink-soft);max-width:34rem;margin:0 auto 30px;}
+  .cta-actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+
+  /* ---------- Footer ---------- */
+  footer.site{
+    background:var(--ink);color:#b8b2a6;padding:64px 0 32px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+  footer .brand{color:var(--cream);font-size:1.4rem;}
+  footer .brand small{color:#8f897d;}
+  footer p{font-size:.92rem;max-width:26rem;margin-top:16px;}
+  footer h3{font-size:1.15rem;color:var(--cream);margin-bottom:16px;}
+  footer ul{list-style:none;display:grid;gap:10px;}
+  footer ul a{text-decoration:none;font-size:.92rem;transition:color .2s;}
+  footer ul a:hover{color:var(--cream);}
+  .foot-bottom{
+    border-top:1px solid rgba(250,246,240,.14);padding-top:26px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-size:.8rem;letter-spacing:.08em;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:940px){
+    .project-story{grid-template-columns:1fr;gap:34px;}
+    .results-grid{grid-template-columns:1fr 1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    .nav{flex-direction:column;gap:16px;}
+    nav.main ul{gap:18px;flex-wrap:wrap;justify-content:center;}
+    section{padding:64px 0;}
+    .ba-pair{grid-template-columns:1fr;}
+    .ba-panel{height:260px;}
+    .project-meta{padding:34px 26px 22px;}
+    .project-story{padding:28px 26px 36px;}
+    .results-grid,.foot-grid{grid-template-columns:1fr;}
+    .cta .inner{padding:44px 26px;}
+    blockquote{padding:34px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="/">Haven <em>&amp;</em> Hue<small>Home Staging</small></a>
+    <nav class="main" aria-label="Primary">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/portfolio" aria-current="page">Our Work</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Page hero -->
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Our Work</span>
+      <h1>Before, after, and everything <em>in between</em></h1>
+      <p>Every project below started with an empty room, a tired listing, or a "we're not sure where to begin." Here's how each one ended — and what happened when it hit the market.</p>
+      <div class="hero-legend" aria-hidden="true">
+        <span><i class="dot-before"></i> Before</span>
+        <span><i class="dot-after"></i> After</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <section class="projects">
+    <div class="wrap">
+
+      <!-- Project 1 -->
+      <article class="project">
+        <div class="project-meta">
+          <div>
+            <span class="eyebrow">Vacant Staging · Laurelhurst</span>
+            <h2>The Maplewood Craftsman</h2>
+          </div>
+          <div class="project-tags">
+            <span class="tag">4 Bed · 2 Bath</span>
+            <span class="tag">One-Day Install</span>
+            <span class="tag result">Sold in 6 Days</span>
+          </div>
+        </div>
+        <div class="ba-pair">
+          <div class="ba-panel before-1">
+            <span class="ba-badge">Before</span>
+            <p class="ba-caption">Freshly painted but echoing — buyers walked through in under ten minutes.</p>
+          </div>
+          <div class="ba-panel after-1">
+            <span class="ba-badge">After</span>
+            <p class="ba-caption">Warm walnut, linen, and terracotta drew buyers straight to the bay window.</p>
+          </div>
+        </div>
+        <div class="project-story">
+          <div>
+            <p>This 1926 craftsman had beautiful bones — original fir floors, a river-stone fireplace, generous windows — but standing empty, it read as small and dark. Our job was to give the rooms a sense of scale and let that Portland light do the talking.</p>
+            <p>We anchored the living room with a low, wide sofa to open the sightline to the fireplace, layered in wool and linen textures, and styled the awkward alcove off the kitchen as a reading nook — the detail nearly every buyer mentioned in feedback. Three offers arrived within the first week.</p>
+          </div>
+          <ul class="project-facts">
+            <li><span>Days on Market</span><strong>6 days</strong></li>
+            <li><span>Final Price</span><strong>9% over asking</strong></li>
+            <li><span>Rooms Staged</span><strong>7 rooms + porch</strong></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project">
+        <div class="project-meta">
+          <div>
+            <span class="eyebrow">Occupied Staging · West Linn</span>
+            <h2>Willow Creek Farmhouse</h2>
+          </div>
+          <div class="project-tags">
+            <span class="tag">5 Bed · 3 Bath</span>
+            <span class="tag">Family in Residence</span>
+            <span class="tag result">12% Over Asking</span>
+          </div>
+        </div>
+        <div class="ba-pair">
+          <div class="ba-panel before-2">
+            <span class="ba-badge">Before</span>
+            <p class="ba-caption">A well-loved family home — with a decade of everyday life filling every surface.</p>
+          </div>
+          <div class="ba-panel after-2">
+            <span class="ba-badge">After</span>
+            <p class="ba-caption">Edited, softened, and re-centered around the farmhouse's original heart: the kitchen.</p>
+          </div>
+        </div>
+        <div class="project-story">
+          <div>
+            <p>The Hendersons were still living in the home while it sold — with two kids, a dog, and a very full calendar. Occupied stagings are a balancing act: the house has to photograph beautifully at 10am and still function as a family home at 6pm.</p>
+            <p>We edited roughly a third of the furnishings into storage, rearranged what remained to widen the traffic flow, and layered in artwork, bedding, and greenery from our inventory. The family kept living their life; the listing photos looked like a magazine spread. It went pending after the first open house.</p>
+          </div>
+          <ul class="project-facts">
+            <li><span>Days on Market</span><strong>9 days</strong></li>
+            <li><span>Final Price</span><strong>12% over asking</strong></li>
+            <li><span>Items Edited Out</span><strong>One full storage pod</strong></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project">
+        <div class="project-meta">
+          <div>
+            <span class="eyebrow">Vacant Staging · Downtown Portland</span>
+            <h2>The Ninth Street Loft</h2>
+          </div>
+          <div class="project-tags">
+            <span class="tag">2 Bed · 2 Bath</span>
+            <span class="tag">Open-Plan Concrete</span>
+            <span class="tag result">Sold in One Weekend</span>
+          </div>
+        </div>
+        <div class="ba-pair">
+          <div class="ba-panel before-3">
+            <span class="ba-badge">Before</span>
+            <p class="ba-caption">Twelve-foot ceilings, poured concrete, and no clue where the "rooms" were.</p>
+          </div>
+          <div class="ba-panel after-3">
+            <span class="ba-badge">After</span>
+            <p class="ba-caption">Rugs and lighting carved the open plan into a living room, dining zone, and studio.</p>
+          </div>
+        </div>
+        <div class="project-story">
+          <div>
+            <p>Lofts are our favorite puzzle. All that open space is a selling point on paper, but in person, buyers often can't imagine how to live in it. This one had sat vacant for seven weeks before the listing agent called us.</p>
+            <p>We used oversized rugs, a sculptural pendant, and a bookshelf placed perpendicular to the windows to define three distinct zones without a single wall. Warm caramel leather and soft clay tones took the chill off the concrete. The listing relaunched on a Friday; it was under contract by Sunday night.</p>
+          </div>
+          <ul class="project-facts">
+            <li><span>Days on Market</span><strong>3 days (relaunch)</strong></li>
+            <li><span>Final Price</span><strong>Full asking, cash</strong></li>
+            <li><span>Zones Created</span><strong>3 from one open plan</strong></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project">
+        <div class="project-meta">
+          <div>
+            <span class="eyebrow">Interior Design · Sellwood</span>
+            <h2>The Alder Street Refresh</h2>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Living + Dining</span>
+            <span class="tag">Design to Stay</span>
+            <span class="tag result">Completed in 5 Weeks</span>
+          </div>
+        </div>
+        <div class="ba-pair">
+          <div class="ba-panel before-4">
+            <span class="ba-badge">Before</span>
+            <p class="ba-caption">A "someday room" the owners had walked past for six years without settling into.</p>
+          </div>
+          <div class="ba-panel after-4">
+            <span class="ba-badge">After</span>
+            <p class="ba-caption">Sage, oak, and unlacquered brass — now the room where everyone ends up.</p>
+          </div>
+        </div>
+        <div class="project-story">
+          <div>
+            <p>Not every transformation ends with a sold sign. Theo and Jamie bought their Sellwood bungalow in 2019 and never quite finished the main floor — a mismatched sofa here, a hand-me-down table there, and a lingering feeling that the room belonged to someone else.</p>
+            <p>We started with how they actually live: slow weekend mornings, dinners that migrate to the sofa, a growing record collection. The design followed — a deep sage accent wall, a custom oak console for the turntable, and layered lighting that makes the room glow after dusk. Same house, entirely new feeling.</p>
+          </div>
+          <ul class="project-facts">
+            <li><span>Timeline</span><strong>5 weeks, concept to install</strong></li>
+            <li><span>Scope</span><strong>Living &amp; dining rooms</strong></li>
+            <li><span>Kept &amp; Reworked</span><strong>40% of existing pieces</strong></li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Results strip -->
+  <section class="results-strip">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">By the Numbers</span>
+        <h2>What staging with Haven &amp; Hue looks like on paper</h2>
+        <p>Beautiful rooms are lovely. Beautiful rooms that move the market are the point.</p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card"><strong>250+</strong><span>Homes Staged</span></div>
+        <div class="result-card"><strong>11 Days</strong><span>Avg. Time on Market</span></div>
+        <div class="result-card"><strong>7.4%</strong><span>Avg. Over Asking</span></div>
+        <div class="result-card"><strong>96%</strong><span>Agent Rebooking Rate</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="quotes">
+    <div class="wrap">
+      <blockquote>
+        <p>I've worked with a handful of staging companies over fifteen years in real estate. Haven &amp; Hue is the only one whose installs make buyers slow down, sit on the sofa, and start imagining the housewarming party.</p>
+        <cite><strong>Corinne Vasquez</strong>Realtor, Bluestone Realty</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <div class="inner">
+        <span class="eyebrow">Your Home, Next</span>
+        <h2>Imagining your listing on this page?</h2>
+        <p>Tell us about your property — or the room you've been meaning to love — and we'll follow up within one business day with a complimentary consultation.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="/contact">Request a Consultation</a>
+          <a class="btn btn-ghost" href="/services">Explore Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">Haven <em>&amp;</em> Hue<small>Home Staging</small></a>
+        <p>Home staging and interior design studio serving Portland and the surrounding valley. Calm, curated spaces that help homes sell — and feel like havens.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/portfolio">Our Work</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Reach Us</h3>
+        <ul>
+          <li><a href="tel:+15035550164">(503) 555-0164</a></li>
+          <li><a href="mailto:hello@havenandhue.com">hello@havenandhue.com</a></li>
+          <li><a href="/contact">Book a Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Haven &amp; Hue Home Staging. All rights reserved.</span>
+      <span>Designed with intention in Portland, Oregon.</span>
+    </div>
+  </div>
+</footer>
+
+  <script async src="https://api.tibly.ai/widget/v1.js"></script>
+</body>
+</html>
